@@ -3,19 +3,24 @@ import styles from './BeerCard.module.css';
 
 interface Props {
   beer: Beer;
+  onClick: () => void;
 }
 
-export function BeerCard({ beer }: Props) {
+export function BeerCard({ beer, onClick }: Props) {
   return (
-    <div className={styles.card}>
-      <div className={styles.image} style={{ background: beer.color }}>
-        🍺
+    <div onClick={onClick} className={styles.card}>
+      {/* Contenedor fijo para la imagen */}
+      <div className={styles.imageContainer}>
+        <img src={beer.image} alt={beer.name} className={styles.beerImage} />
       </div>
-      <div className={styles.body}>
-        <div className={styles.name}>{beer.name}</div>
-        <div className={styles.style}>{beer.style}</div>
-        {beer.description && <p className={styles.description}>{beer.description}</p>}
-      </div>
+      <h3 className={styles.beerName}>{beer.name}</h3>
+      <button
+        onClick={onClick}
+        className="mt-4 inline-flex items-center justify-center rounded-lg bg-amber-600 px-4 py-2.5 font-semibold text-white transition-colors hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+      >
+        Ver detalle
+      </button>
     </div>
   );
 }
+

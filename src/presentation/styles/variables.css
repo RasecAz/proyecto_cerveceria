@@ -1,5 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&display=swap');
+
 :root {
-  /* Paleta principal — morado/dorado craft premium */
+  /* Paleta Premium Puyuma — Oscura y elegante */
+  --color-fondo: #0D0D0D;
+  --color-superficie: #161616;
+  --color-borde: #2A2A2A;
+  --color-dorado: #C9963A;
+  --color-dorado-suave: #E8B96A;
+  --color-texto: #F0EDE8;
+  --color-texto-muted: #888888;
+  --color-purpura: #7C3AED;
+  
+  /* Paleta principal — morado/dorado craft premium (backwards compatibility) */
   --wajira-purple: #5B2A86;
   --wajira-purple-dark: #3D1A5C;
   --wajira-purple-light: #7C4AA8;
@@ -21,4 +33,5 @@
   --radius-lg: 24px;
 
   --font-base: 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', serif;
 }
