@@ -1,51 +1,105 @@
 .navbar {
-  background: var(--wajira-purple);
-  padding: 14px 24px;
+  width: 100%;
+  height: 82px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 0 3rem;
+
+  background: rgba(48, 11, 82, 0.92);
+
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
 
-.logoIcon {
-  width: 36px;
-  height: 36px;
   border-radius: 50%;
-  background: var(--wajira-gold-accent);
-  color: var(--wajira-purple-dark);
+
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.brand {
+  color: #ffffff;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.navLinks {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-weight: 700;
+  gap: 18px;
+
+  list-style: none;
 }
 
-.logoText {
-  color: var(--wajira-cream);
-  font-size: 18px;
+.navLinks li {
+  cursor: pointer;
+
+  color: #ffffff;
+
   font-weight: 600;
+
+  padding: 10px 18px;
+
+  border-radius: 14px;
+
+  transition: all 0.25s ease;
+
+  position: relative;
 }
 
-.links {
-  display: flex;
-  gap: 20px;
+.navLinks li:hover {
+  background: rgba(255, 196, 57, 0.16);
+
+  color: #ffc439;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 18px rgba(255, 196, 57, 0.18);
 }
 
-.links a {
-  color: var(--wajira-cream);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
+.navLinks li::after {
+  content: "";
+
+  position: absolute;
+
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+
+  height: 2px;
+
+  background: #ffc439;
+
+  transform: scaleX(0);
+
+  transition: transform 0.25s ease;
 }
 
-.links a:hover {
-  opacity: 0.8;
-}
-
-@media (max-width: 640px) {
-  .links { display: none; }
+.navLinks li:hover::after {
+  transform: scaleX(1);
 }
